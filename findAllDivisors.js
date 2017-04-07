@@ -11,9 +11,8 @@
 function makeNegativeFromPositive (input) {
     var inputIsNotNumber = (typeof input !== 'number')
     var inputIsNegative = isNaN(Math.sqrt(input))
-  
-  	if (inputIsNotNumber || inputIsNegative) {
-    		throw new TypeError("Need to pass a positive integer")
+    if (inputIsNotNumber || inputIsNegative) {
+         throw new TypeError("Need to pass a positive integer")
     }
     var str = input.toString()
     str = "-" + str
@@ -23,15 +22,15 @@ function makeNegativeFromPositive (input) {
 }
 
 function main(input) {
-		var inputIsNotNumber = (typeof input !== 'number')
+    var inputIsNotNumber = (typeof input !== 'number')
     if (inputIsNotNumber) {
-    		throw new TypeError("Need to pass an integer")	
+    	throw new TypeError("Need to pass an integer")	
     }
     var divisors = []
     for (num=1; num <= input; num++) {
-    		var numIsDivisor = (input % num === 0)
+    	var numIsDivisor = (input % num === 0)
         if (numIsDivisor) {
-        		var negNum = makeNegativeFromPositive(num)
+            var negNum = makeNegativeFromPositive(num)
             divisors.push(num, negNum)
         }
     }
