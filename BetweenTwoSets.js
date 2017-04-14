@@ -13,14 +13,12 @@ function main() {
     
     var totalBtwnVals = 0
     
-    //Find the min and max values
     var min = a[a.length - 1]
     var max = b[0]
 
     var domain = range(min, max)
     
     domain.forEach((elem) => {
-        //Bug is in either or both of the functions
         var elemIsBetweenValue = isMultipleOfAllValues(elem, a) && isFactorOfAllValues(elem, b)
         if (elemIsBetweenValue) {
             totalBtwnVals += 1
